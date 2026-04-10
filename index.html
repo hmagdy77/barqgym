@@ -56,7 +56,7 @@ to{transform:translate(-50%,60px)}
 }
 
 .container{
-max-width:880px;
+max-width:900px;
 margin:auto;
 padding:25px;
 }
@@ -123,18 +123,13 @@ margin:30px 0;
 opacity:.85;
 }
 
+/* CARD */
 .card{
 background:var(--card);
 border-radius:16px;
 border:1px solid var(--border);
 margin-bottom:14px;
-backdrop-filter:blur(8px);
-transition:.25s;
-}
-
-.card:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 25px rgba(0,0,0,.25);
+overflow:hidden;
 }
 
 .accordion{
@@ -148,16 +143,17 @@ justify-content:space-between;
 .panel{
 max-height:0;
 overflow:hidden;
-transition:max-height .4s ease;
+transition:max-height .5s ease;
 padding:0 18px;
 }
 
 .panel p{
-line-height:1.9;
+line-height:2;
 padding-bottom:18px;
-opacity:.9;
+white-space:pre-line; /* مهم جدًا لعرض النص كامل */
 }
 
+/* CONTACT */
 .contact{
 margin-top:40px;
 text-align:center;
@@ -166,61 +162,47 @@ text-align:center;
 .contactIcons{
 display:flex;
 justify-content:center;
-gap:20px;
-margin-top:15px;
-}
-.contactIcons{
-display:flex;
-justify-content:center;
-gap:20px;
+gap:18px;
 margin-top:15px;
 }
 
+/* BASE SOCIAL */
 .social{
-width:60px;
-height:60px;
+width:62px;
+height:62px;
 display:flex;
 align-items:center;
 justify-content:center;
 border-radius:50%;
-background:var(--card);
-border:1px solid var(--border);
-backdrop-filter:blur(10px);
 transition:.25s;
+text-decoration:none;
 overflow:hidden;
 }
 
+/* WHATSAPP */
+.whatsapp{
+background:#25D366;
+}
+
+/* SNAPCHAT */
+.snapchat{
+background:#FFFC00;
+}
+
+/* INSTAGRAM */
+.instagram{
+background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+}
+
 .social img{
-width:28px;
-height:28px;
+width:30px;
+height:30px;
 object-fit:contain;
 }
 
 .social:hover{
 transform:translateY(-5px) scale(1.1);
 box-shadow:0 0 18px var(--glow);
-}
-
-.social{
-width:60px;
-height:60px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-transition:.25s;
-box-shadow:0 0 0 rgba(0,0,0,0);
-}
-
-.social:hover{
-transform:translateY(-5px) scale(1.08);
-box-shadow:0 0 20px var(--glow);
-}
-
-.whatsapp{ background:#25D366; }
-.snapchat{ background:#FFFC00; color:#000; }
-.instagram{
-background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
 }
 
 footer{
@@ -231,10 +213,6 @@ font-size:14px;
 }
 
 </style>
-
-<!-- Icons -->
-<script src="https://kit.fontawesome.com/6b54b2f6c6.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -250,7 +228,7 @@ font-size:14px;
 <button onclick="toggleTheme()">☾</button>
 </div>
 
-<img src="logo.JPEG" class="logo">
+<img src="logo.png" class="logo">
 
 <h1 data-ar="نادي برق الرياضي" data-en="Barq Sports Club">نادي برق الرياضي</h1>
 
@@ -260,84 +238,155 @@ font-size:14px;
 
 <div class="intro"
 data-ar="برجاء قراءة الشروط والأحكام بتركيز لعدم التعرض لالغاء الاشتراك او المسائلة القانونية"
-data-en="Please read the terms carefully to avoid membership cancellation or legal responsibility">
+data-en="Please read the Terms & Conditions carefully to avoid membership cancellation or legal liability">
 برجاء قراءة الشروط والأحكام بتركيز لعدم التعرض لالغاء الاشتراك او المسائلة القانونية
 </div>
 
-
+<!-- 1 -->
 <div class="card">
-<div class="accordion" data-ar="العضوية والاشتراك" data-en="Membership & Subscription">العضوية والاشتراك</div>
+<div class="accordion" data-ar="العضوية والاشتراك" data-en="Membership & Subscription">
+العضوية والاشتراك
+</div>
 <div class="panel">
-<p data-ar="يشترط ألا يقل عمر المشترك عن 14 عاماً..." 
-data-en="Members must be at least 14 years old. Membership is personal and non-transferable.">
-يشترط ألا يقل عمر المشترك عن 14 عاماً...
+<p data-ar="
+يشترط ألا يقل عمر المشترك عن 18 عاماً، ويجوز اشتراك الفئات العمرية الأقل بموافقة ولي الأمر الخطية.
+تبدأ مدة الاشتراك من تاريخ السداد أو من تاريخ التفعيل المحدد.
+العضوية شخصية وغير قابلة للإعارة أو الاستخدام من قبل الغير.
+تختلف المزايا حسب نوع الباقة المشتراة، ويقر المشترك بصحة بياناته المقدمة.
+"
+data-en="
+Members must be at least 18 years old. Younger members are allowed only with written guardian approval.
+Membership starts from payment or activation date.
+Membership is personal and non-transferable.
+Benefits vary depending on package type and the member confirms provided data is correct.
+">
+يشترط ألا يقل عمر المشترك عن 18 عاماً...
 </p>
 </div>
 </div>
 
-
+<!-- 2 -->
 <div class="card">
-<div class="accordion" data-ar="سياسة التجميد والإلغاء" data-en="Freeze & Cancellation Policy">سياسة التجميد والإلغاء</div>
+<div class="accordion" data-ar="سياسة التجميد والإلغاء" data-en="Freeze & Cancellation Policy">
+سياسة التجميد والإلغاء
+</div>
 <div class="panel">
-<p data-ar="يُسمح بتجميد الاشتراك وفقاً لنوع الباقة..." 
-data-en="Membership freezing is allowed depending on the package type and duration. No refunds after activation.">
-يُسمح بتجميد الاشتراك وفقاً لنوع الباقة...
+<p data-ar="
+يُسمح بتجميد الاشتراك وفقاً لنوع الباقة ولمدد محددة.
+يجب تقديم طلب التجميد مسبقاً.
+لا يحق استرداد او استبدال قيمة الاشتراك نهائيا من التفعيل.
+ولا يجوز نقل العضوية نهائيا.
+"
+data-en="
+Membership can be frozen depending on package type and duration limits.
+Freeze requests must be submitted in advance.
+No refund or exchange is allowed after activation.
+Membership cannot be transferred.
+">
+يُسمح بتجميد الاشتراك...
 </p>
 </div>
 </div>
 
-
+<!-- 3 -->
 <div class="card">
-<div class="accordion" data-ar="القواعد العامة والسلوك" data-en="General Rules & Conduct">القواعد العامة والسلوك</div>
+<div class="accordion" data-ar="القواعد العامة والسلوك" data-en="General Rules & Conduct">
+القواعد العامة والسلوك
+</div>
 <div class="panel">
-<p data-ar="يلتزم المشترك بارتداء الزي الرياضي المناسب..." 
-data-en="Members must wear proper sports attire and respect staff and other members.">
+<p data-ar="
+يلتزم المشترك بارتداء الزي الرياضي المناسب واستخدام منشفة شخصية وتعقيم الأجهزة بعد الاستخدام.
+يجب إعادة المعدات إلى أماكنها واحترام الموظفين والمشتركين.
+يحق للإدارة إلغاء العضوية دون تعويض في حال السلوك غير اللائق أو مخالفة الأنظمة.
+"
+data-en="
+Members must wear proper sportswear, use a towel, and sanitize equipment after use.
+Equipment must be returned and respect must be maintained.
+Management may cancel membership without refund in case of misconduct.
+">
 يلتزم المشترك بارتداء الزي الرياضي المناسب...
 </p>
 </div>
 </div>
 
-
+<!-- 4 -->
 <div class="card">
-<div class="accordion" data-ar="الصحة والسلامة وإخلاء المسؤولية" data-en="Health & Safety Disclaimer">الصحة والسلامة وإخلاء المسؤولية</div>
+<div class="accordion" data-ar="الصحة والسلامة وإخلاء المسؤولية" data-en="Health & Safety Disclaimer">
+الصحة والسلامة وإخلاء المسؤولية
+</div>
 <div class="panel">
-<p data-ar="يقر المشترك بأنه يتمتع بصحة جيدة..." 
-data-en="Members confirm they are in good health and take full responsibility for any injuries.">
+<p data-ar="
+يقر المشترك بأنه يتمتع بصحة جيدة ويتحمل كامل المسؤولية عن أي إصابات قد تنتج عن ممارسته للأنشطة داخل النادي.
+يخلي المشترك إدارة النادي من أي مطالبات قانونية ناتجة عن الإصابات أو سوء استخدام الأجهزة.
+يحق للنادي استدعاء الإسعاف في حالات الطوارئ على نفقة المشترك.
+"
+data-en="
+Members confirm they are in good health and assume full responsibility for any injuries during activities.
+The club is not responsible for injuries or misuse of equipment.
+Emergency services may be called at the member’s expense.
+">
 يقر المشترك بأنه يتمتع بصحة جيدة...
 </p>
 </div>
 </div>
 
-
+<!-- 5 -->
 <div class="card">
-<div class="accordion" data-ar="التصوير والخصوصية" data-en="Photography & Privacy">التصوير والخصوصية</div>
+<div class="accordion" data-ar="الممتلكات الشخصية" data-en="Personal Belongings">
+الممتلكات الشخصية
+</div>
 <div class="panel">
-<p data-ar="يُمنع تصوير المشتركين الآخرين دون إذنهم..." 
-data-en="Members may not photograph others without permission.">
+<p data-ar="
+الخزائن مخصصة للاستخدام اليومي فقط أثناء التواجد في النادي.
+النادي غير مسؤول عن فقدان أو سرقة الممتلكات الشخصية داخل المرافق أو المواقف.
+"
+data-en="
+Lockers are for daily use only during presence in the club.
+The club is not responsible for lost or stolen belongings.
+">
+الخزائن مخصصة للاستخدام اليومي فقط...
+</p>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<div class="accordion" data-ar="التصوير والخصوصية" data-en="Photography & Privacy">
+التصوير والخصوصية
+</div>
+<div class="panel">
+<p data-ar="
+يُمنع تصوير المشتركين الآخرين دون إذنهم، ويؤدي ذلك إلى إلغاء العضوية والمساءلة القانونية.
+النادي مراقب بكاميرات لأغراض الأمن والسلامة فقط.
+"
+data-en="
+Photography of members without permission is prohibited and may result in cancellation.
+The club is monitored by security cameras for safety only.
+">
 يُمنع تصوير المشتركين الآخرين...
 </p>
 </div>
 </div>
 
+<!-- SOCIAL -->
+<div class="contact">
+<h3 data-ar="تابعنا" data-en="Follow Us">تابعنا</h3>
+
 <div class="contactIcons">
 
-<!-- WhatsApp -->
-<a class="social" href="https://wa.me/YOUR_PHONE" target="_blank">
-<img src="whatsapp.png" alt="WhatsApp">
+<a class="social whatsapp" href="https://wa.me/YOUR_PHONE" target="_blank">
+<img src="whatsapp.png">
 </a>
 
-<!-- Snapchat -->
-<a class="social" href="https://snapchat.com/add/YOUR_SNAP" target="_blank">
-<img src="snap.jpg" alt="Snapchat">
+<a class="social snapchat" href="https://snapchat.com/add/YOUR_SNAP" target="_blank">
+<img src="snapchat.png">
 </a>
 
-<!-- Instagram -->
-<a class="social" href="https://instagram.com/YOUR_INSTA" target="_blank">
-<img src="inst.jpg" alt="Instagram">
+<a class="social instagram" href="https://instagram.com/YOUR_INSTA" target="_blank">
+<img src="instagram.png">
 </a>
 
 </div>
-
 </div>
 
 <footer>
@@ -351,7 +400,7 @@ data-en="Members may not photograph others without permission.">
 document.querySelectorAll(".accordion").forEach(btn=>{
 btn.onclick=()=>{
 const panel=btn.nextElementSibling
-panel.style.maxHeight=panel.style.maxHeight?null:panel.scrollHeight+"px"
+panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px"
 }
 })
 
